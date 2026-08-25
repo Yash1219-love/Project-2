@@ -12,7 +12,7 @@
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #fdf2f8; /* Light aesthetic pink */
+            background-color: #fdf2f8;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             text-align: center;
             overflow: hidden;
@@ -21,39 +21,42 @@
         .slide {
             display: none;
             padding: 20px;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn 0.8s ease-in-out;
+            max-width: 90%;
         }
         .slide.active {
             display: block;
         }
         h1 {
-            font-size: 32px;
-            color: #db2777; /* Deep pink */
-            margin-bottom: 10px;
+            font-size: 30px;
+            color: #db2777;
+            margin-bottom: 15px;
         }
         p {
-            font-size: 20px;
+            font-size: 18px;
             margin-bottom: 25px;
+            color: #555;
         }
         .quote {
-            font-size: 26px;
+            font-size: 22px;
             font-style: italic;
             font-weight: bold;
             color: #be185d;
-            padding: 20px;
-            line-height: 1.5;
+            padding: 15px;
+            line-height: 1.6;
         }
         img {
-            max-width: 90%;
-            max-height: 50vh;
-            border: 8px solid white;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            margin-bottom: 20px;
+            max-width: 280px;
+            max-height: 350px;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            border-radius: 12px;
+            margin: 15px 0;
         }
         button {
-            padding: 12px 25px;
-            font-size: 18px;
+            padding: 12px 28px;
+            font-size: 16px;
             background-color: #f43f5e;
             color: white;
             border: none;
@@ -67,7 +70,7 @@
             transform: scale(1.05);
         }
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+            from { opacity: 0; transform: translateY(15px); }
             to { opacity: 1; transform: translateY(0); }
         }
     </style>
@@ -76,26 +79,26 @@
 
     <!-- Slide 1 -->
     <div class="slide active" id="slide1">
-        <h1>Hello! 👋</h1>
-        <p>I have a small surprise for you...</p>
+        <h1>Hey Friend! 👋</h1>
+        <p>I built a small surprise just for you...</p>
         <button onclick="nextSlide(1)">Click Here ➡️</button>
     </div>
 
     <!-- Slide 2 -->
     <div class="slide" id="slide2">
         <h1>You know what? 🤔</h1>
-        <p>Life brings a lot of people, but...</p>
+        <p>Life brings a lot of people into our journey, but...</p>
         <button onclick="nextSlide(2)">Next ➡️</button>
     </div>
 
     <!-- Slide 3 -->
     <div class="slide" id="slide3">
-        <h1>Only a few stay.</h1>
-        <p>And I am so glad you did.</p>
+        <h1>Only a few truly stay.</h1>
+        <p>And I'm really lucky to have you around.</p>
         <button onclick="nextSlide(3)">Next ➡️</button>
     </div>
 
-    <!-- Slide 4 -->
+    <!-- Slide 4 (Quote) -->
     <div class="slide" id="slide4">
         <div class="quote">
             “Some people become memories, but the best friends become a part of your heart forever.” ❤️
@@ -103,11 +106,11 @@
         <button onclick="nextSlide(4)">Next ➡️</button>
     </div>
 
-    <!-- Slide 5 (Image Slide) -->
+    <!-- Slide 5 (Photo) -->
     <div class="slide" id="slide5">
-        <h1>Cheers to Us! ✨</h1>
-        <!-- You mentioned this image name -->
-        <img src="1000273339.jpg" alt="Our Beautiful Memory">
+        <h1>Best Friends Forever! ✨</h1>
+        <!-- तपाईंको अपलोड गरेको फोटोको नाम -->
+        <img src="photo.1" alt="Best Friends">
         <br>
         <button onclick="location.reload()">Replay 🔄</button>
     </div>
@@ -120,4 +123,5 @@
     </script>
 
 </body>
-</html>
+    </html>
+    
