@@ -1,1 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Special Surprise for You! 🎁</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9ace6a);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            max-width: 450px;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        h2 { color: #333; margin-bottom: 15px; }
+        p { color: #666; line-height: 1.5; }
+        .btn {
+            background-color: #ff4757;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 30px;
+            cursor: pointer;
+            margin-top: 15px;
+            box-shadow: 0 4px 10px rgba(255, 71, 87, 0.4);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            background-color: #ff6b81;
+        }
+        .hidden { display: none; }
+        .gift-box {
+            font-size: 80px;
+            cursor: pointer;
+            animation: bounce 1s infinite alternate;
+            margin: 20px 0;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-15px); }
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .final-msg {
+            font-size: 20px;
+            color: #2ed573;
+            font-weight: bold;
+            margin-top: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- STEP 1: WELCOME & GAME -->
+    <div id="step1" class="card">
+        <h2>Hey Bestie! 👋</h2>
+        <p>I have a special surprise for you! But first, you have to play a quick game.</p>
+        <button class="btn" onclick="startGame()">Play This Game 🎮</button>
+    </div>
+
+    <!-- STEP 2: GIFT BOX -->
+    <div id="step2" class="card hidden">
+        <h2>Great Job! 🎉</h2>
+        <p>You won the game! Now click the Gift Box to unlock your surprise.</p>
+        <div class="gift-box" onclick="openGift()">🎁</div>
+        <p style="font-size: 12px; color: #888;">(Click the gift box above!)</p>
+    </div>
+
+    <!-- STEP 3: PHOTO & SONG -->
+    <div id="step3" class="card hidden">
+        <h2>Yeh Dosti Hum Nahi Todenge! 👭🎶</h2>
+        <!-- Change photo URL below with your photo link -->
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=500&q=80" alt="Best Friends">
+        
+        <!-- Background Audio -->
+        <audio id="friendshipSong" controls autoplay style="margin-top: 15px; width: 100%;">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <br>
+        <button class="btn" onclick="openMessage()">Open New Message ✉️</button>
+    </div>
+
+    <!-- STEP 4: FINAL MESSAGE -->
+    <div id="step4" class="card hidden">
+        <h2>For You ❤️</h2>
+        <p class="final-msg">
+            “Some people become memories, but the best friends become a part of your heart forever.” ❤️
+        </p>
+        <p style="margin-top: 25px; font-size: 14px;">Thanks for being such an awesome friend! ✨</p>
+    </div>
+
+    <script>
+        function startGame() {
+            // Open a quick mini game in new tab & show next step
+            window.open('https://elgoog.im/t-rex/', '_blank');
+            document.getElementById('step1').classList.add('hidden');
+            document.getElementById('step2').classList.remove('hidden');
+        }
+
+        function openGift() {
+            document.getElementById('step2').classList.add('hidden');
+            document.getElementById('step3').classList.remove('hidden');
+            var song = document.getElementById('friendshipSong');
+            song.play();
+        }
+
+        function openMessage() {
+            document.getElementById('step3').classList.add('hidden');
+            document.getElementById('step4').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
 
